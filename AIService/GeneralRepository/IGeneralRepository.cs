@@ -14,4 +14,6 @@ public interface IGeneralRepository
         where TEntity : class;
 
     public Task<string> AskGpt(string query);
+
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

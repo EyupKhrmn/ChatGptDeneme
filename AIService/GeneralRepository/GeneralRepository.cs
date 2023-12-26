@@ -42,11 +42,11 @@ public class GeneralRepository<TContext> : IGeneralRepository where TContext : D
     {
         string outputResult = "";
 
-        var opanai = new OpenAIAPI("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");
+        var opanai = new OpenAIAPI("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");
         CompletionRequest request = new CompletionRequest();
         request.Prompt = query;
         request.Model = OpenAI_API.Models.Model.DavinciText;
-        request.MaxTokens = 500;
+        request.MaxTokens = 2000;
 
         var completions = await opanai.Completions.CreateCompletionAsync(request);
         
@@ -58,5 +58,9 @@ public class GeneralRepository<TContext> : IGeneralRepository where TContext : D
         Console.WriteLine(outputResult);
 
         return outputResult;
+    }
+    public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    {
+        return await _context.SaveChangesAsync(cancellationToken);
     }
 }
