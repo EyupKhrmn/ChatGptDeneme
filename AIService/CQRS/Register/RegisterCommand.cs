@@ -32,7 +32,8 @@ namespace AIService.CQRS.Register
                     Password = request.user.Password,
                     Surname = request.user.Surname,
                     Username = request.user.Username,
-                    UserCode = randomNumber.Next(0,10)
+                    UserCode = randomNumber.Next(0,100),
+                    UserBodyIndex = request.user.Kilo / (request.user.Height * request.user.Height)
                 };
 
                 _generalRepository.add(user);

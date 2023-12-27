@@ -42,7 +42,7 @@ public class GeneralRepository<TContext> : IGeneralRepository where TContext : D
     {
         string outputResult = "";
 
-        var opanai = new OpenAIAPI("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");
+        var opanai = new OpenAIAPI("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");
         CompletionRequest request = new CompletionRequest();
         request.Prompt = query;
         request.Model = OpenAI_API.Models.Model.DavinciText;

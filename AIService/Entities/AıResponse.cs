@@ -6,4 +6,5 @@ public class AıResponse
     public User User { get; set; }
     public string Message { get; set; }
     public string Question { get; set; }
+    public double UserBodyIndex { get; set; }
 }
